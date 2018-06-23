@@ -13,7 +13,11 @@ let imgPath = './public/images/Penguins.jpg'
 app.use(logger("dev"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/articles"
 mongoose.connect("mongodb://localhost/articles");
+mongoose.Promise = Promise;
+mongoose.connect(MONGODB_URI);
+
 
 
 (async () => {
