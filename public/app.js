@@ -3,7 +3,7 @@ $("#scrape").on("click", function() {
   $("#wrapper").prepend("The website has been scraped using advanced mind reading powers!")
 $.getJSON("/articles", function(data) {
   for (var i = 0; i < data.length; i++) {
-    $("#articles").append("<p data-id='" + data[i]._id + "'>" +"<h1>" data[i].title + "</h1>" + "<br />" + data[i].link + "</p>");
+    $("#articles").append("<p data-id='" + data[i]._id + "'>" +"<h3>" + data[i].title + "</h3>" + "<br />" + data[i].link + "</p>");
   }
 
   });
